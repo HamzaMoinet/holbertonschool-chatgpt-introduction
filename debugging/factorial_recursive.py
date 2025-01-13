@@ -1,16 +1,21 @@
 #!/usr/bin/python3
-import sys  # Importation du module sys pour accéder aux arguments de la ligne de commande
+import sys
 
-# Définition d'une fonction récursive pour calculer la factorielle d'un nombre
 def factorial(n):
-    if n == 0:  # Condition de base : la factorielle de 0 est 1
+    """
+    Computes the factorial of a given integer.
+
+    Parameters:
+    n (int): An integer for which the factorial is to be computed.
+
+    Returns:
+    int: The factorial of the integer `n`.
+    """
+    if n == 0:
         return 1
-    else:  # Appel récursif : n * factorielle de (n-1)
+    else:
         return n * factorial(n-1)
 
-# Conversion du premier argument de la ligne de commande en entier
-# Appel de la fonction factorielle avec cet argument
+# Read input from the command line and compute the factorial
 f = factorial(int(sys.argv[1]))
-
-# Affichage du résultat de la factorielle
 print(f)
