@@ -2,27 +2,18 @@
 import sys
 
 def factorial(n):
-    if n < 0:
-        raise ValueError("Factorial is not defined for negative numbers")
     result = 1
     while n > 1:
         result *= n
-        n -= 1  # Décrémente n pour éviter une boucle infinie
+        n -= 1
     return result
 
-if __name__ == "__main__":
+# Vérification si un argument a été passé
+if len(sys.argv) < 2:
+    print("Erreur : Veuillez passer un argument pour le calcul du factoriel.")
+else:
     try:
-        # Vérifie que l'argument est un entier positif
-        if len(sys.argv) != 2:
-            print("Usage: python3 script.py <non-negative integer>")
-            sys.exit(1)
-
-        n = int(sys.argv[1])
-        if n < 0:
-            raise ValueError("Only non-negative integers are allowed")
-
-        f = factorial(n)
+        f = factorial(int(sys.argv[1]))
         print(f)
-    except ValueError as e:
-        print(f"Error: {e}")
-        sys.exit(1)
+    except ValueError:
+        print("Erreur : L'argument doit être un nombre entier.")
