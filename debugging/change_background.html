@@ -21,7 +21,7 @@
 
 <h2>Click the button to change the background color</h2>
 
-<!-- Corrected the id to match the script -->
+<!-- Correction: Changer l'ID en "colorButton" -->
 <button id="colorButton">Change Color</button>
 
 <script>
@@ -31,9 +31,7 @@
 
     function changeBackgroundColor() {
         // Generate a random color
-        var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
-        // Ensure the color has exactly 6 characters (padded with zeros if needed)
-        randomColor = randomColor.padEnd(7, '0');
+        var randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
         // Change the background color of the body
         document.body.style.backgroundColor = randomColor;
     }
